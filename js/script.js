@@ -98,6 +98,10 @@ function button2() {
     window.open('assets/files/variations.pdf', '_blank')
 }
 
+function button3() {
+    window.open('https://github.com/soapsrc/Project-Me-Button', '_blank')
+}
+
 // Images Area Images
 let imagesAreaImages = document.querySelectorAll('.images-area img');
 // Images Area First Image

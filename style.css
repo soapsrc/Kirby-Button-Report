@@ -1,21 +1,34 @@
+/* Main Rules */
+
+:root {
+    --white-c: #fff;
+    --black-c: #000;
+    --buttons-background-c: rgba(255, 255, 255, 0.219);
+    --buttons-active-background-c: rgba(135, 207, 235, 0.493);
+    --main-c: #E5D9FC;
+    --main2-c: #FDD8EA;
+    --accent-c: #9968f3;
+    --accent2-c: #bbf1f9;
+}
+
 ::-webkit-scrollbar {
     width: 7px;
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: #fff;
+    background-color: var(--main2-c);
     width: 2px;
-    border-left: 4px solid #fff;
-    border-right: 4px solid #fff;
+    border-left: 4px solid var(--main2-c);
+    border-right: 4px solid var(--main2-c);
 }
 
 ::-webkit-scrollbar-thumb:vertical {
     width: 2px;
-    background-color: #ffffff;
+    background-color: var(--main2-c);
     border-radius: 1000px;
-    border: 4px solid #623A03;
-    border-top: 7px solid #623A03;
-    border-bottom: 7px solid #623A03;
+    border: 4px solid var(--accent-c);
+    border-top: 7px solid var(--accent-c);
+    border-bottom: 7px solid var(--accent-c);
 }
 
 @font-face {
@@ -48,7 +61,7 @@ html {
 
 body {
     color: #1E292B;
-    background: #FEEED7;
+    background: var(--main2-c);
     background-size: 200px auto;
     background-blend-mode: multiply;
     background-repeat: repeat;
@@ -59,7 +72,8 @@ body {
 }
 
 .fa-angle-down {
-    color: #623A03;
+    color: var(--accent-c);
+    ;
     font-size: 4rem;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
@@ -123,7 +137,7 @@ body {
 }
 
 .ml16 {
-    color: #623A03;
+    color: var(--accent-c);
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: 500;
@@ -169,8 +183,8 @@ h1 {
 h2 {
     font-size: 1.8rem;
     font-weight: 300;
-    color: #555555;
-    border-bottom: 1px solid #FED7DA;
+    color: var(--accent-c);
+    border-bottom: 1px solid var(--main-c);
     font-family: 'Kaori';
 }
 
@@ -192,7 +206,7 @@ a {
 b,
 strong {
     font-weight: 600;
-    color: #96E3FC;
+    color: var(--main-c);
 }
 
 i {}
@@ -203,7 +217,7 @@ ul {
 }
 
 u {
-    color: #FF89A2;
+    color: var(--main-c);
 }
 
 .pre {
@@ -220,17 +234,28 @@ u {
 }
 
 .top-container {
-    background-color: #FED7DA;
+    background-color: var(--main-c);
     position: relative;
     height: 100vh;
     align-items: center;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+}
+
+.top-container img {
+    opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 38vh;
+    width: 29%;
+    height: auto;
 }
 
 .top-container-titles {
     position: absolute;
     left: 50%;
+    top: 60%;
     width: 80%;
     transform: translate(-50%, -50%);
     align-items: center;
@@ -239,10 +264,18 @@ u {
     flex-flow: column wrap;
 }
 
+.container-img-wrapper {
+    width: 80%;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 .header {
     height: 3.5rem;
-    background-color: #FED7DA;
-    z-index: 2;
+    background-color: var(--main-c);
+    z-index: 1;
 }
 
 nav {
@@ -257,14 +290,14 @@ nav a {
     display: inline-block;
     padding: 0em 0.3em;
     font-size: 1.5em;
-    color: #623A03;
+    color: var(--white-c);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: white;
+    color: var(--accent-c);
     text-decoration: none;
 }
 
@@ -274,7 +307,7 @@ nav a p {
 
 nav a:hover p {
     display: block;
-    color: white;
+    color: var(--accent-c);
     opacity: 0.0;
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
@@ -333,11 +366,13 @@ nav a:hover p {
 
 .wrapper {
     background-color: white;
+    background-image: url('assets/images/bg.png');
+    background-repeat: repeat;
     padding: 10px;
     width: 70%;
     margin: auto;
-    border: 1px solid #412702;
-    box-shadow: calc((400px + (25px * 2)) * 0.025) calc((400px + (25px * 2)) * 0.025) #623A03;
+    border: 1px solid var(--accent-c);
+    box-shadow: calc((400px + (25px * 2)) * 0.025) calc((400px + (25px * 2)) * 0.025) var(--accent-c);
 }
 
 .text-box {
@@ -377,7 +412,8 @@ button {
 
 /* Fill button styling */
 
-.fill {
+.fill,
+.fill2 {
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
@@ -389,12 +425,13 @@ button {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.fill::after {
+.fill::after,
+.fill2::after {
     padding-top: 10%;
     padding-bottom: 5%;
     text-align: center;
     content: "View PDF";
-    background-color: #ffe54c;
+    background-color: var(--accent2-c);
     width: 100%;
     z-index: 0;
     position: absolute;
@@ -404,7 +441,12 @@ button {
     transition: 0.2s;
 }
 
-.fill:hover::after {
+.fill2::after {
+    content: "Github Repository";
+}
+
+.fill:hover::after,
+.fill2:hover::after {
     top: 0px;
     left: 0px;
 }
@@ -421,16 +463,6 @@ svg {
 .float-left {
     float: left;
     margin-right: 2rem;
-}
-
-
-/* Main Rules */
-
-:root {
-    --white-c: #fff;
-    --black-c: #000;
-    --buttons-background-c: rgba(255, 255, 255, 0.219);
-    --buttons-active-background-c: rgba(135, 207, 235, 0.493);
 }
 
 
