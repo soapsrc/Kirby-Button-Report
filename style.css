@@ -211,9 +211,12 @@ strong {
 
 i {}
 
-ul {
-    margin-top: 10px;
-    list-style-image: url('./assets/images/arrowleft.gif');
+ul.a {
+    list-style-position: outside;
+}
+
+ul.b {
+    list-style-position: inside;
 }
 
 u {
