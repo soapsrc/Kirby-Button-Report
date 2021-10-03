@@ -206,7 +206,7 @@ a {
 b,
 strong {
     font-weight: 600;
-    color: var(--main-c);
+    color: #f99cc9;
 }
 
 i {}
@@ -369,6 +369,7 @@ nav a:hover p {
     background-image: url('assets/images/bg.png');
     background-repeat: repeat;
     padding: 10px;
+    padding-bottom: 35px;
     width: 70%;
     margin: auto;
     border: 1px solid var(--accent-c);
@@ -377,7 +378,7 @@ nav a:hover p {
 
 .text-box {
     margin-bottom: 15px;
-    min-height: 30rem;
+    padding-bottom: 15px;
     padding-left: 5rem;
     padding-right: 5rem;
 }
@@ -463,6 +464,7 @@ svg {
 .float-left {
     float: left;
     margin-right: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -514,7 +516,7 @@ svg {
 
 .images-area {
     width: 45vh;
-    height: 60vh;
+    height: auto;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -632,7 +634,7 @@ svg {
 
 .images-area2 {
     width: 45vh;
-    height: 60vh;
+    height: auto;
     position: relative;
     display: flex;
     overflow: hidden;
